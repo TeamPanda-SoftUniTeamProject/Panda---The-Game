@@ -29,19 +29,15 @@
         var panda_y = 750;
         var panda_moving = false;
 
-
         var spritesheet = new Spritesheet("images/pandaSpriteSheetTester.png");
         var ground = new Sprite(spritesheet);
         var grass = new Sprite(spritesheet);
         var mushroom = new Sprite(spritesheet);
         var spikes = new Sprite(spritesheet);
-        // Load the sprite sheet
-        //var panda = new Sprite("images/pandaSprite1.png");
-
 
         var panda1 = new Sprite(spritesheet);
 
-        // Array to generate canvas elements map. Displayed dynamically on load
+
         var map = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -88,20 +84,21 @@
 
             panda_moving = false;
 
-            // Movement is done by pressing the arrow keys
+
             if(key.rightArrow) { panda_x += 5; panda_moving = true; }
             if(key.leftArrow) { panda_x -= 5; panda_moving = true; }
             if(key.upArrow) {panda_y += -5; panda_x += 2; velocityY = 10; panda_moving = true; }
             if(key.downArrow) {panda_y -= -5; panda_x += -2; velocityY = 10; panda_moving = true; }
-            if(key.spaceBar) {jump(velocityY, velocityX, panda_y = get(ground), panda_x = get(grass), panda_moving = true )}
+            if(key.spaceBar) {velocityY = 10; velocityX; panda_y = (playerYPos*5 + playerYPos/2)*(2*panda_y)/panda_x; panda_x = panda_y*2; panda_moving = true; }
 
-            // Amimated Panda
+            //(velocityY, velocityX, panda_y = $.get(ground), panda_x = $.get(grass), panda_moving = true )}
+
+
             if(panda_moving){
                 panda1.draw(panda_x, panda_y, [9, 10, 11, 12, 13]);
             } else {
                 panda1.draw(panda_x, panda_y, 0);
             }
-
 
         }, 30);
     </script>

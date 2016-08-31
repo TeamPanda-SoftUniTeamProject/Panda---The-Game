@@ -6,7 +6,6 @@ var playerYPos = 188;
 var playerJumpSpeed = 8;
 var playerJumpVelocity = playerJumpSpeed;
 
-//Jump function edited:
 
 function jump() {
     var playerJumpVelocity = playerJumpSpeed;
@@ -21,7 +20,7 @@ function jump() {
     }
 
     $(document).get(KEY_UP);
-
+    $(document).get(KEY_SPACE);
 }
 
 
@@ -39,9 +38,7 @@ $(document).keyup(function (e) {
 });
 
 
-    //
-    //or
-    //
+    //or:
 
 var newVelocityX;
 var oldVelocityX;
@@ -72,10 +69,12 @@ for (var i = 0; i < time; i++) {
 
     }
 
+    newPositionY = positionY + newVelocityY;
+
     velocityY += gravityAccelerationY * time;
     positionY += velocityY * time;
     if (positionY > 0) {
-        positionY = 0;
+        positionY = newPositionY;
         velocityY = 0;
 
     }
@@ -84,6 +83,8 @@ for (var i = 0; i < time; i++) {
     velocityX += accelerationX * time;
     velocityX *= Math.pow(frictionX, time);
     positionX += velocityX * time;
+
+    newPositionY += newVelocityY * time;
 
 
 

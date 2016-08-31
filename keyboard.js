@@ -1,6 +1,4 @@
-/**
- * Created by ivan on 8/28/16.
- */
+/* Created by ivan on 8/28/16. */
 
 var Keyboard = function () {
     this.leftArrow = false;
@@ -18,8 +16,6 @@ var KEY_DOWN = 40;
 var KEY_SPACE = 32;
 
 
-// Key state for four keys
-//var kstate = [false, false, false, false, false];
 window.key = null;
 
 
